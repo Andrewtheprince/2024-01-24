@@ -21,7 +21,14 @@ class Controller:
         self._view.update_page()
 
     def handleCreaGrafo(self, e):
-        pass
+        anno = self._view._ddyear.value
+        self._model.buildGraph(anno, self._metodoScelto.Order_method_code)
+        n,a = self._model.getGraphDetails()
+        self._view.txt_result.controls.append(ft.Text(f"Grafo creato."))
+        self._view.txt_result.controls.append(ft.Text(f"Ci sono {n} vertici."))
+        self._view.txt_result.controls.append(ft.Text(f"Ci sono {a} archi."))
+        self._view.txt_result.controls.append(ft.Text(f""))
+        self._view.update_page()
 
     def handleProdotti(self, e):
         pass
