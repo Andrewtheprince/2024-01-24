@@ -13,7 +13,7 @@ class Model:
     def buildGraph(self, anno, metodo, s):
         self._graph.clear()
         self._idMap.clear()
-        s = 1 + float(0.6)
+        s = 1 + float(s)
         nodi = DAO.getNodi(anno, metodo)
         self._graph.add_nodes_from(nodi)
         for nodo in self._graph.nodes:
@@ -21,8 +21,6 @@ class Model:
             for nodo2 in self._graph.nodes:
                 if nodo2 != nodo and float(nodo.VenditaTot) > s*float(nodo2.VenditaTot):
                     self._graph.add_edge(nodo2, nodo)
-
-
 
     def getGraphDetails(self):
         return self._graph.number_of_nodes(), self._graph.number_of_edges()
@@ -38,7 +36,7 @@ class Model:
         listaFinale = []
         i = 0
         for e in listaOrdinata:
-            if i < 4:
+            if i < 5:
                 listaFinale.append(e)
                 i += 1
         return listaFinale
