@@ -3,10 +3,18 @@ import flet as ft
 
 class Controller:
     def __init__(self, view, model):
-        # the view, with the graphical elements of the UI
         self._view = view
-        # the model, which implements the logic of the program and holds the data
         self._model = model
+
+    def fillYear(self):
+        self._view._ddyear.options.append(ft.dropdown.Option(key = "2015", data = 2015))
+        self._view._ddyear.options.append(ft.dropdown.Option(key = "2016", data = 2016))
+        self._view._ddyear.options.append(ft.dropdown.Option(key = "2017", data = 2017))
+        self._view._ddyear.options.append(ft.dropdown.Option(key = "2018", data = 2018))
+        self._view.update_page()
+
+    def fillMethods(self):
+        pass
 
     def handleCreaGrafo(self, e):
         pass

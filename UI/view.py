@@ -25,6 +25,7 @@ class View(ft.UserControl):
         self._page.controls.append(self._title)
 
         self._ddyear = ft.Dropdown(label="Anno")
+        self._controller.fillYear()
         self._btnCreaGrafo = ft.ElevatedButton(text="Crea Grafo", on_click=self._controller.handleCreaGrafo)
 
         cont = ft.Container(self._ddyear, width=250, alignment=ft.alignment.top_left)
