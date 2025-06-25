@@ -32,11 +32,12 @@ class View(ft.UserControl):
                       vertical_alignment=ft.CrossAxisAlignment.END)
 
         self._ddmetodo = ft.Dropdown(label="Metodo")
+        self._txtIn = ft.TextField(hint_text="S percentuale")
         self._btnProdotti = ft.ElevatedButton(text="Calcola Prodotti Redditizzi", on_click=self._controller.handleProdotti)
         cont2 = ft.Container(self._ddmetodo, width=250, alignment=ft.alignment.top_left)
-        row2 = ft.Row([cont2, ft.Container(self._btnProdotti, width=250)
+        cont3 = ft.Container(self._txtIn, width=250, alignment=ft.alignment.top_left)
+        row2 = ft.Row([cont2, cont3, ft.Container(self._btnProdotti, width=250)
         ], alignment=ft.MainAxisAlignment.CENTER)
-
 
         self._page.controls.append(row1)
         self._page.controls.append(row2)
