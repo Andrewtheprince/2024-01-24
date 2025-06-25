@@ -33,6 +33,7 @@ class View(ft.UserControl):
                       vertical_alignment=ft.CrossAxisAlignment.END)
 
         self._ddmetodo = ft.Dropdown(label="Metodo")
+        self._controller.fillMethods()
         self._txtIn = ft.TextField(hint_text="S percentuale")
         self._btnProdotti = ft.ElevatedButton(text="Calcola Prodotti Redditizzi", on_click=self._controller.handleProdotti)
         cont2 = ft.Container(self._ddmetodo, width=250, alignment=ft.alignment.top_left)

@@ -1,4 +1,5 @@
 from database.DB_connect import DBConnect
+from model.method import Method
 
 class DAO:
 
@@ -7,10 +8,11 @@ class DAO:
         conn = DBConnect.get_connection()
         cursor = conn.cursor(dictionary = True)
         result = []
-        query = """ """
+        query = """ select *
+                    from go_methods"""
         cursor.execute(query)
         for row in cursor:
-            result.append(row)
+            result.append(Method(**row))
         cursor.close()
         conn.close()
         return result
